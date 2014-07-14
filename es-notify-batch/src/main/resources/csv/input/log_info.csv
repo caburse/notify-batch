@@ -1,0 +1,2 @@
+"ISDAPSDE51", "caburse", "*/5 * * * * ?", "SECONDS", "5", "AuthenticationService", "level", "ERROR", 10, "MINUTES", 60
+"ISDAPSDE51", "caburse", "*/5 * * * * ?", "MINUTES", "5", "caburse", "level", "ERROR", 5, "MINUTES", 5
