@@ -12,6 +12,7 @@ public final class PropertiesConstants {
 	
 	public static final String KEYSPACE = "KEYSPACE";
 	public static final String SERVERS = "SERVERS";
+	public static final String NOTIFICATION_TTL = "NOTIFICATION_TTL";
 	
 	/** SMTP Email HOST **/
 	public static final String EMAIL_HOST = "EMAIL_HOST";	

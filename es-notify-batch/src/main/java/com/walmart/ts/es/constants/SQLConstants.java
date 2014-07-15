@@ -18,10 +18,10 @@ public final class SQLConstants {
 			" fkey text," +		
 			" PRIMARY KEY(key, createDate));";
 	
-	public static final String CREATE_NOTIFICATION_CF_INDEX = 
+	public static final String CREATE_NOTIFICATION_CF = 
 			"CREATE TABLE notification(" +			 
 			" key text PRIMARY KEY," +				
-			" createDate timestamp;";
+			" createDate timestamp);";
 
 	public static final String INSERT_NOTIFICATION = 
 			"INSERT INTO notification(key, createDate) VALUES(?, ?) USING TTL ?;";
