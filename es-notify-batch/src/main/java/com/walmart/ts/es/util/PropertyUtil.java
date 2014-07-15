@@ -91,7 +91,7 @@ public final class PropertyUtil {
 		}catch (Exception e) {
 			fileInputStream = PropertyUtil.getStream(Constants.DEFAULT_PROPERTY);
 			loadPropertyFile(fileInputStream);
-			LOGGER.error("Loading Default Property file:"+Constants.DEFAULT_PROPERTY);			
+			LOGGER.warn("Loading Default Property file:"+Constants.DEFAULT_PROPERTY);			
 		}		
 	}
 	
