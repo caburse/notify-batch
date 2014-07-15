@@ -28,8 +28,7 @@ public class StorageDAO {
 	private static final Logger LOGGER = Logger.getLogger(StorageDAO.class);
 	private static Session session;
 	private static Cluster cluster;
-//	private static ConsistencyLevel readConsistency;
-//	private static ConsistencyLevel writeConsistency;
+	private static ConsistencyLevel consistencyLevel = ConsistencyLevel.ONE;	
 	
 	public StorageDAO() {		
 		init(PropertyUtil.getInstance().getString(PropertiesConstants.SERVERS), 
@@ -78,7 +77,7 @@ public class StorageDAO {
 	public ResultSet execute(String cql) {
 		LOGGER.info(cql);
 		Statement cqlQuery = new SimpleStatement(cql)
-			.setConsistencyLevel(ConsistencyLevel.LOCAL_QUORUM)
+			.setConsistencyLevel(consistencyLevel)
 			.enableTracing();
 		return session.execute(cqlQuery);
 	}
@@ -189,7 +188,7 @@ public class StorageDAO {
 	 * @return
 	 */
 	protected BoundStatement createBoundSatement(PreparedStatement statement, Object... fields){
-		statement.setConsistencyLevel(ConsistencyLevel.LOCAL_QUORUM);
+		statement.setConsistencyLevel(consistencyLevel);
 		return new BoundStatement(statement).bind(fields);
 	}
 	
@@ -199,7 +198,7 @@ public class StorageDAO {
 	 * @return
 	 */
 	protected BoundStatement createBoundSatement(PreparedStatement statement){
-		statement.setConsistencyLevel(ConsistencyLevel.LOCAL_QUORUM);
+		statement.setConsistencyLevel(consistencyLevel);
 		return new BoundStatement(statement);
 	}
 		
