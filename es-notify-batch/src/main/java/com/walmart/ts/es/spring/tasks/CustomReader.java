@@ -30,7 +30,7 @@ public class CustomReader implements ItemReader<List<Alert>> {
 		List<Alert> alerts = new ArrayList<Alert>();
 		
 		ResultSet irs = storageDAO.getKey(
-				Constants.RULE_KEYS,
+				Constants.RULE_KEY,
 				Constants.FORIEGN_KEY,
 				Alert.class);
 		

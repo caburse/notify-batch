@@ -70,7 +70,7 @@ public class CustomProcessor implements ItemProcessor<List<Alert>,List<Alert>> {
 			
 			client.close();
 			boolean notify = response.getHits().getTotalHits() > alert.getMaxOccurance();
-			if(notify){
+			if(notify && !notifications.contains(alert)){
 				notifications.add(alert);							
 			}
 		}
