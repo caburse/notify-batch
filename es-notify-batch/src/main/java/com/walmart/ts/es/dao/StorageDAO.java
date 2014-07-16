@@ -397,11 +397,11 @@ public class StorageDAO {
 	
 	
 	private static String toCassandraType(String type){
-		return CassandraTypes.valueOf(type).name().toLowerCase();		
+		return CassandraTypes.fromJava(type).name().toLowerCase();		
 	}
 	
 	private static boolean hasCassandraType(String type){
-		return null != CassandraTypes.valueOf(type).name().toLowerCase();		
+		return null != CassandraTypes.fromJava(type).name().toLowerCase();		
 	}
 	
 	public static Object getData(Class<?> clazz, Row row, String field){
